@@ -2,7 +2,8 @@ const { expect } = require("chai");
 
 describe('FamilyFunds', async function () {
   it('should set the right owner', async function () {
-    const [ownerAccount, account1, account2] = await ethers.getSigners()
+    const addresses = await ethers.getSigners()
+    const [ownerAccount, account1, account2] = addresses
     const [ownerAddress, addr1, addr2] = addresses.map(account => account.address)
 
     const FamilyFundsContract = await ethers.getContractFactory('FamilyFunds')
@@ -14,7 +15,8 @@ describe('FamilyFunds', async function () {
   })
 
   it('should recognise addresses as family members', async function () {
-    const [ownerAcc, account1, account2, account3] = await ethers.getSigners()
+    const addresses = await ethers.getSigners()
+    const [ownerAcc, account1, account2, account3] = addresses
     const [ownerAddress, addr1, addr2, addr3] = addresses.map(account => account.address)
 
     const FamilyFundsContract = await ethers.getContractFactory('FamilyFunds')
