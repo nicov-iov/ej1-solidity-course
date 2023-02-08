@@ -37,4 +37,8 @@ contract FamilyFunds {
   function getBalance() public view returns(uint) {
     return address(this).balance;
   }
+
+  function isFamilyMember(address key) public view returns(bool) {
+    return familyMember[key];
+  }
 }
