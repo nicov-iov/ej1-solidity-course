@@ -2,7 +2,7 @@
 pragma solidity ^0.8.9;
 
 contract FamilyFunds {
-  address owner;
+  address public owner;
 
   mapping (address => bool) public familyMember;
 
